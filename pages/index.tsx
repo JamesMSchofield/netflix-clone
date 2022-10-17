@@ -1,17 +1,17 @@
 import Head from 'next/head'
-import { Header, Banner } from '../components'
+import { Header, Banner, Row } from '../components'
 import { Movie } from '../types'
 import requests from '../utils/requests'
 
 interface Props {
-  netflixOriginals: Movie[]
-  actionMovies: Movie[]
-  comedyMovies: Movie[]
-  documentaries: Movie[]
-  horrorMovies: Movie[]
-  romanceMovies: Movie[]
-  topRated: Movie[]
-  trendingNow: Movie[]
+  netflixOriginals: [Movie]
+  actionMovies: [Movie]
+  comedyMovies: [Movie]
+  documentaries: [Movie]
+  horrorMovies: [Movie]
+  romanceMovies: [Movie]
+  topRated: [Movie]
+  trendingNow: [Movie]
 }
 
 const Home = ({ 
@@ -26,21 +26,24 @@ const Home = ({
 }: Props) => {
 
   return (
-    <div className='relative h-screen bg-gradient-to-b from-gray-900/90 via-gray-900/20 to-gray-900/0 lg:h-[140vh]'>
+    <div className='`relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[140vh]'>
       <Head>
         <title>Netflix</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className='relative px-4 py-24 lg:px-16'>
+      <main className='relative px-4 pb-24 py-6 lg:px-16'>
         <Banner netflixOriginals={netflixOriginals} />
-        <section>
-          {/* Row */}
-          {/* Row */}
-          {/* Row */}
-          {/* Row */}
-          {/* Row */}
-          {/* Row */}
+        <section className='overflow-hidden md:space-y-16'>
+        <Row title="Trending Now" movies={trendingNow} />
+          <Row title="Top Rated" movies={topRated} />
+          <Row title="Action Thrillers" movies={actionMovies} />
+          {/* My List */}
+          {/* {list.length > 0 && <Row title="My List" movies={list} />} */}
+          <Row title="Comedies" movies={comedyMovies} />
+          <Row title="Scary Movies" movies={horrorMovies} />
+          <Row title="Romance Movies" movies={romanceMovies} />
+          <Row title="Documentaries" movies={documentaries} />
         </section>
       </main>
       {/* Modal */}

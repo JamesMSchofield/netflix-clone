@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { BellIcon, MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 import { useEffect, useState } from 'react'
 
-export const Header: React.FunctionComponent = () => {
+export const Header = () => {
 
     const [isScrolled, setIsScrolled] = useState<boolean>(false)
 
