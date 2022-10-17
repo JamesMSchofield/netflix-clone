@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+    html {
+        @apply font-spline;
+    }
+
     body {
         @apply bg-[#141414] text-white;
     }
@@ -16,5 +22,12 @@
     .header-link {
         @apply cursor-pointer text-sm font-light text-[#e5e5e5];
         @apply transition duration-[.4s] hover:text-[#b3b3b3];
+    }
+
+    .banner-button {
+        @apply flex items-center gap-x-2 px-5 py-1.5;
+        @apply text-sm rounded;
+        @apply transition hover:opacity-75;
+        @apply md:px-8 md:text-base;
     }
 }
